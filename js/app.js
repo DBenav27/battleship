@@ -72,8 +72,18 @@ var model = {
     }
 
     var newShipLocations = [];
-    for
+    for (var i=0, i < this.shipLength; i++) {
+        if (direction === 1){
+            newShipLocations.push(row + "" + (col + i));
+        } else {
+            newShipLocations.push((row + i) + "" + col);
+        }
+    }
+    return newShipLocations;
+  },
 
-  }
+  
+
+
 
 }
