@@ -129,4 +129,36 @@ var view = {
           }
         }
       }
-  }
+  };
+
+  function parseGuess(guess) {
+        var alphabet = ["A", "B", "C", "D", "E", "F", "G"];
+
+        if (guess === null || guess.length !== 2){
+          alert("Please enter a valid guess. Must be a letter and a number");
+        } else {
+          var firstChar = guess.chatAt(0);
+          var row = alphabet.indexOf(firstChar);
+          var column = guess.chatAt(1);
+
+          if (isNaN(row) || isNaN(column)) {
+              alert("Not a valid input");
+          } else if (row < 0) || row >= model.boardSize || column < 0 || column >=
+                     model.boardSize) {
+              alert("Input is not located on this board");
+            } else {
+              return row + column;
+            }
+        }
+        return null;
+  };
+
+  function handleFireButton() {
+     var guessInput = document.getElementbyId("guessInput");
+     var guess = guessInput.value.toUpperCase();
+
+     controller.processGuess(guess);
+
+     guess.value = "";
+
+  };
