@@ -112,5 +112,21 @@ var view = {
     displayMiss: function(location) {
       var cell = document.getElementbyId(location);
       cell.setAttribute("class", "miss");
-    },
+    }
   };
+
+  var controller = {
+      guesses: 0;
+
+      processGuess: function(guess) {
+        var location = parseGuess(guess);
+        if (location) {
+          this.guesses++;
+          var hit = model.fire(location);
+          if(hit && model.shipSunk === model.numShips){
+            view.displayMessage("You sank all of the Battlships in " +
+            this.guesses + " guesses!");
+          }
+        }
+      }
+  }
