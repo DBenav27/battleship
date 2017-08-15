@@ -6,7 +6,7 @@ div#board {
   width: 1024px;
   height: 925px;
   margin: auto;
-  background: url("../images/board.png") no-repeat;
+  background: url("/Users/Dbenavidez/Desktop/battleship/images/board.jpg") no-repeat;
 }
 div#messageArea {
   position:absolute;
@@ -15,11 +15,12 @@ div#messageArea {
   color: rgb(51,204,51)
 }
 .hit {
-  background:url("/images/ship.png") no-repeat center center;
+  background:url("/Users/Dbenavidez/Desktop/battleship/images/ship.png") no-repeat center center;
 }
-.miss{
-  background:url("/images/miss.png") no-repeat center center;
+.miss {
+  background:url("/Users/Dbenavidez/Desktop/battleship/images/miss.png") no-repeat center center;
 }
+
 table {
   border-spacing: 0px;
   position: absolute;
@@ -30,7 +31,7 @@ td {
     width:94px;
     height:94px;
 }
-form{
+form {
   position: absolute;
   bottom: 0px;
   right: 0px;
@@ -41,4 +42,7 @@ form input{
   background-color: rgb(128, 204, 51);
   border-color: rgb(51, 204, 51);
   font-size: 1em;
+}
+h1 {
+  color:red;
 }
