@@ -82,8 +82,35 @@ var model = {
     return newShipLocations;
   },
 
-  
+  collision: function(locations){
+      for (var i = 0; i < this.numShips; i++){
+          var ship = this.ships[i];
+          for (var j = 0; j < location.length; j++){
+             if (ship.locations.indexOf(locations[j]) >= 0){
+               return true;
+             }
+          }
+      }
+      return false;
+  }
 
 
 
-}
+};
+
+var view = {
+    displayMessage: function(msg){
+      var messageArea = document.getElementbyId("messageArea");
+      messageArea.innerHTML = msg;
+    },
+
+    displayHit: function(location) {
+      var cell = document.getElementbyId(location);
+      cell.setAttribute("class", "hit");
+    },
+
+    displayMiss: function(location) {
+      var cell = document.getElementbyId(location);
+      cell.setAttribute("class", "miss");
+    },
+  };
