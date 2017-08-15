@@ -71,6 +71,9 @@ var model = {
 
     }
 
+    var newShipLocations = [];
+    for
+
   }
 
 }
